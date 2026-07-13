@@ -34,8 +34,8 @@ function LinkIcon({ icon }: { icon: FounderLink["icon"] }) {
 }
 
 export function Founders() {
-  const { t } = useLanguage();
-  const ref = useReveal<HTMLElement>();
+  const { t, lang } = useLanguage();
+  const ref = useReveal<HTMLElement>([lang]);
 
   const founders = [
     {

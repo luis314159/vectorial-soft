@@ -7,8 +7,8 @@ const EMAILS = [
 ];
 
 export function Contact() {
-  const { t } = useLanguage();
-  const ref = useReveal<HTMLElement>();
+  const { t, lang } = useLanguage();
+  const ref = useReveal<HTMLElement>([lang]);
 
   return (
     <section id="contact" ref={ref} className="scroll-mt-20 border-t border-line">

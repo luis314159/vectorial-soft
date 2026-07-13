@@ -12,8 +12,8 @@ const PROJECT_TAGS: string[][] = [
 ];
 
 export function Work() {
-  const { t } = useLanguage();
-  const ref = useReveal<HTMLElement>();
+  const { t, lang } = useLanguage();
+  const ref = useReveal<HTMLElement>([lang]);
 
   return (
     <section id="work" ref={ref} className="scroll-mt-20 border-y border-line bg-surface/40">

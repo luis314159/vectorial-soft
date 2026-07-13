@@ -14,8 +14,8 @@ const ICONS = [
 ];
 
 export function Services() {
-  const { t } = useLanguage();
-  const ref = useReveal<HTMLElement>();
+  const { t, lang } = useLanguage();
+  const ref = useReveal<HTMLElement>([lang]);
 
   return (
     <section id="services" ref={ref} className="scroll-mt-20">
