@@ -117,6 +117,7 @@ const en: Translation = {
         points: [
           "React & React Native frontends",
           "FastAPI, Django and Rust (Axum) backends",
+          "UX research, usability testing & product design (Figma)",
           "Identity, SSO & enterprise integrations",
         ],
       },
@@ -260,6 +261,7 @@ const es: Translation = {
         points: [
           "Frontends en React y React Native",
           "Backends en FastAPI, Django y Rust (Axum)",
+          "Investigación UX, pruebas de usabilidad y diseño de producto (Figma)",
           "Identidad, SSO e integraciones empresariales",
         ],
       },
@@ -403,6 +405,7 @@ const pt: Translation = {
         points: [
           "Frontends em React e React Native",
           "Backends em FastAPI, Django e Rust (Axum)",
+          "Pesquisa de UX, testes de usabilidade e design de produto (Figma)",
           "Identidade, SSO e integrações corporativas",
         ],
       },
@@ -546,6 +549,7 @@ const de: Translation = {
         points: [
           "Frontends mit React & React Native",
           "Backends mit FastAPI, Django und Rust (Axum)",
+          "UX-Research, Usability-Tests & Produktdesign (Figma)",
           "Identity, SSO & Enterprise-Integrationen",
         ],
       },
