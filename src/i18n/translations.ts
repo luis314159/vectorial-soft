@@ -50,7 +50,11 @@ export interface Translation {
     luisBio: string;
     marcoRole: string;
     marcoBio: string;
+    collabKicker: string;
+    adelaRole: string;
+    adelaBio: string;
     website: string;
+    email: string;
   };
   contact: {
     kicker: string;
@@ -84,7 +88,7 @@ const en: Translation = {
     ctaPrimary: "Start a project",
     ctaSecondary: "See our work",
     stats: [
-      { value: "10+", label: "Years of combined experience" },
+      { value: "15+", label: "Years of combined experience" },
       { value: "20+", label: "Systems in production" },
       { value: "5", label: "Industries served" },
       { value: "4", label: "Languages we speak" },
@@ -187,7 +191,12 @@ const en: Translation = {
     marcoRole: "Co-Founder · Machine Learning Engineer",
     marcoBio:
       "ML engineer focused on MLOps and cloud infrastructure on AWS — taking models from experimentation to production at scale. Computer Science and Physics engineer (UACH), builder of autonomous-retail vision systems and end-to-end MLOps platforms.",
+    collabKicker: "Collaborators",
+    adelaRole: "Full-Stack Developer · UX & HCI",
+    adelaBio:
+      "Full-stack developer specialized in Human-Computer Interaction (M.Sc., UACH). Has built administrative and financial platforms with React, Angular and PHP/Laravel over PostgreSQL and SQL Server, and brings UX research, usability testing and interface design (Figma) to every product. Published author and conference speaker on virtual assistants for the emotional support of children with autism.",
     website: "Website",
+    email: "Email",
   },
   contact: {
     kicker: "Contact",
@@ -222,7 +231,7 @@ const es: Translation = {
     ctaPrimary: "Iniciar un proyecto",
     ctaSecondary: "Ver proyectos",
     stats: [
-      { value: "10+", label: "Años de experiencia combinada" },
+      { value: "15+", label: "Años de experiencia combinada" },
       { value: "20+", label: "Sistemas en producción" },
       { value: "5", label: "Industrias atendidas" },
       { value: "4", label: "Idiomas que hablamos" },
@@ -325,7 +334,12 @@ const es: Translation = {
     marcoRole: "Co-Fundador · Ingeniero de Machine Learning",
     marcoBio:
       "Ingeniero de ML enfocado en MLOps e infraestructura cloud en AWS — llevando modelos de la experimentación a producción a escala. Ingeniero en Ciencias de la Computación y en Física (UACH), creador de sistemas de visión para retail autónomo y plataformas MLOps de extremo a extremo.",
+    collabKicker: "Colaboradores",
+    adelaRole: "Desarrolladora Full-Stack · UX & HCI",
+    adelaBio:
+      "Desarrolladora full-stack especializada en Interacción Humano-Computadora (Maestría, UACH). Ha construido plataformas administrativas y financieras con React, Angular y PHP/Laravel sobre PostgreSQL y SQL Server, y aporta investigación UX, pruebas de usabilidad y diseño de interfaces (Figma) a cada producto. Autora de publicaciones y ponente en congresos sobre asistentes virtuales para el apoyo emocional de niños con autismo.",
     website: "Sitio web",
+    email: "Correo",
   },
   contact: {
     kicker: "Contacto",
@@ -360,7 +374,7 @@ const pt: Translation = {
     ctaPrimary: "Iniciar um projeto",
     ctaSecondary: "Ver projetos",
     stats: [
-      { value: "10+", label: "Anos de experiência combinada" },
+      { value: "15+", label: "Anos de experiência combinada" },
       { value: "20+", label: "Sistemas em produção" },
       { value: "5", label: "Indústrias atendidas" },
       { value: "4", label: "Idiomas que falamos" },
@@ -463,7 +477,12 @@ const pt: Translation = {
     marcoRole: "Co-Fundador · Engenheiro de Machine Learning",
     marcoBio:
       "Engenheiro de ML focado em MLOps e infraestrutura cloud na AWS — levando modelos da experimentação à produção em escala. Engenheiro em Ciência da Computação e em Física (UACH), criador de sistemas de visão para varejo autônomo e plataformas MLOps de ponta a ponta.",
+    collabKicker: "Colaboradores",
+    adelaRole: "Desenvolvedora Full-Stack · UX & HCI",
+    adelaBio:
+      "Desenvolvedora full-stack especializada em Interação Humano-Computador (Mestrado, UACH). Construiu plataformas administrativas e financeiras com React, Angular e PHP/Laravel sobre PostgreSQL e SQL Server, e traz pesquisa de UX, testes de usabilidade e design de interfaces (Figma) para cada produto. Autora de publicações e palestrante em congressos sobre assistentes virtuais para o apoio emocional de crianças com autismo.",
     website: "Site",
+    email: "E-mail",
   },
   contact: {
     kicker: "Contato",
@@ -498,7 +517,7 @@ const de: Translation = {
     ctaPrimary: "Projekt starten",
     ctaSecondary: "Unsere Projekte",
     stats: [
-      { value: "10+", label: "Jahre kombinierte Erfahrung" },
+      { value: "15+", label: "Jahre kombinierte Erfahrung" },
       { value: "20+", label: "Systeme in Produktion" },
       { value: "5", label: "Bediente Branchen" },
       { value: "4", label: "Sprachen, die wir sprechen" },
@@ -601,7 +620,12 @@ const de: Translation = {
     marcoRole: "Mitgründer · Machine-Learning-Ingenieur",
     marcoBio:
       "ML-Ingenieur mit Fokus auf MLOps und Cloud-Infrastruktur auf AWS — von der Experimentierphase bis zur Produktion im großen Maßstab. Ingenieur für Informatik und Physik (UACH), Entwickler von Vision-Systemen für autonomen Einzelhandel und End-to-End-MLOps-Plattformen.",
+    collabKicker: "Mitwirkende",
+    adelaRole: "Full-Stack-Entwicklerin · UX & HCI",
+    adelaBio:
+      "Full-Stack-Entwicklerin mit Spezialisierung auf Mensch-Computer-Interaktion (M.Sc., UACH). Hat Verwaltungs- und Finanzplattformen mit React, Angular und PHP/Laravel auf PostgreSQL und SQL Server gebaut und bringt UX-Research, Usability-Tests und Interface-Design (Figma) in jedes Produkt ein. Autorin und Konferenz-Speakerin zu virtuellen Assistenten für die emotionale Unterstützung autistischer Kinder.",
     website: "Website",
+    email: "E-Mail",
   },
   contact: {
     kicker: "Kontakt",

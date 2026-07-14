@@ -3,14 +3,24 @@ import { useReveal } from "../hooks/useReveal";
 import { SectionHeader } from "./SectionHeader";
 import luisPhoto from "../assets/luis.jpg";
 import marcoPhoto from "../assets/marco.jpg";
+import adelaPhoto from "../assets/adela.jpg";
 
-interface FounderLink {
+interface PersonLink {
   label: string;
   href: string;
-  icon: "github" | "linkedin" | "globe";
+  icon: "github" | "linkedin" | "globe" | "mail";
 }
 
-function LinkIcon({ icon }: { icon: FounderLink["icon"] }) {
+interface Person {
+  name: string;
+  role: string;
+  bio: string;
+  photo: string;
+  photoPosition: string;
+  links: PersonLink[];
+}
+
+function LinkIcon({ icon }: { icon: PersonLink["icon"] }) {
   if (icon === "github") {
     return (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
@@ -25,6 +35,14 @@ function LinkIcon({ icon }: { icon: FounderLink["icon"] }) {
       </svg>
     );
   }
+  if (icon === "mail") {
+    return (
+      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
       <circle cx="12" cy="12" r="9" />
@@ -33,11 +51,56 @@ function LinkIcon({ icon }: { icon: FounderLink["icon"] }) {
   );
 }
 
+function PersonCard({ person, delay }: { person: Person; delay: number }) {
+  return (
+    <article
+      className="reveal overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:border-accent/40"
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <div className="grid sm:grid-cols-[200px_1fr]">
+        <div className="relative aspect-square sm:aspect-auto sm:h-full">
+          <img
+            src={person.photo}
+            alt={person.name}
+            loading="lazy"
+            className={`absolute inset-0 h-full w-full object-cover ${person.photoPosition}`}
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent sm:bg-gradient-to-r"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="p-7">
+          <h3 className="font-display text-xl font-semibold text-bright">{person.name}</h3>
+          <p className="mt-1.5 font-mono text-xs uppercase tracking-wider text-accent">
+            {person.role}
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-body">{person.bio}</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {person.links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target={l.icon === "mail" ? undefined : "_blank"}
+                rel={l.icon === "mail" ? undefined : "noopener noreferrer"}
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs font-medium text-body transition hover:border-accent/50 hover:text-bright"
+              >
+                <LinkIcon icon={l.icon} />
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function Founders() {
   const { t, lang } = useLanguage();
   const ref = useReveal<HTMLElement>([lang]);
 
-  const founders = [
+  const founders: Person[] = [
     {
       name: "Luis Ángel Almazán López",
       role: t.founders.luisRole,
@@ -48,7 +111,7 @@ export function Founders() {
         { label: t.founders.website, href: "https://lalmazan.com", icon: "globe" },
         { label: "GitHub", href: "https://github.com/luis314159", icon: "github" },
         { label: "LinkedIn", href: "https://linkedin.com/in/luis-angel-almazan-lopez", icon: "linkedin" },
-      ] as FounderLink[],
+      ],
     },
     {
       name: "Marco Sáenz",
@@ -59,7 +122,20 @@ export function Founders() {
       links: [
         { label: "GitHub", href: "https://github.com/MarcoS329612", icon: "github" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/marcosaenz31/", icon: "linkedin" },
-      ] as FounderLink[],
+      ],
+    },
+  ];
+
+  const collaborators: Person[] = [
+    {
+      name: "Adela Almazán",
+      role: t.founders.adelaRole,
+      bio: t.founders.adelaBio,
+      photo: adelaPhoto,
+      photoPosition: "object-center",
+      links: [
+        { label: t.founders.email, href: "mailto:lopezadela606@gmail.com", icon: "mail" },
+      ],
     },
   ];
 
@@ -74,47 +150,16 @@ export function Founders() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {founders.map((f, i) => (
-            <article
-              key={f.name}
-              className="reveal overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:border-accent/40"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="grid sm:grid-cols-[200px_1fr]">
-                <div className="relative aspect-square sm:aspect-auto sm:h-full">
-                  <img
-                    src={f.photo}
-                    alt={f.name}
-                    loading="lazy"
-                    className={`absolute inset-0 h-full w-full object-cover ${f.photoPosition}`}
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent sm:bg-gradient-to-r"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="p-7">
-                  <h3 className="font-display text-xl font-semibold text-bright">{f.name}</h3>
-                  <p className="mt-1.5 font-mono text-xs uppercase tracking-wider text-accent">
-                    {f.role}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-body">{f.bio}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {f.links.map((l) => (
-                      <a
-                        key={l.href}
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs font-medium text-body transition hover:border-accent/50 hover:text-bright"
-                      >
-                        <LinkIcon icon={l.icon} />
-                        {l.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </article>
+            <PersonCard key={f.name} person={f} delay={i * 80} />
+          ))}
+        </div>
+
+        <p className="reveal mt-14 font-mono text-xs font-medium uppercase tracking-[0.22em] text-accent">
+          {t.founders.collabKicker}
+        </p>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {collaborators.map((c, i) => (
+            <PersonCard key={c.name} person={c} delay={i * 80} />
           ))}
         </div>
       </div>
