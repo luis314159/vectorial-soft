@@ -124,9 +124,6 @@ export function Founders() {
         { label: "LinkedIn", href: "https://www.linkedin.com/in/marcosaenz31/", icon: "linkedin" },
       ],
     },
-  ];
-
-  const collaborators: Person[] = [
     {
       name: "Adela Almazán",
       role: t.founders.adelaRole,
@@ -151,15 +148,6 @@ export function Founders() {
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {founders.map((f, i) => (
             <PersonCard key={f.name} person={f} delay={i * 80} />
-          ))}
-        </div>
-
-        <p className="reveal mt-14 font-mono text-xs font-medium uppercase tracking-[0.22em] text-accent">
-          {t.founders.collabKicker}
-        </p>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {collaborators.map((c, i) => (
-            <PersonCard key={c.name} person={c} delay={i * 80} />
           ))}
         </div>
       </div>
