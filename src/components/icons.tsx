@@ -56,6 +56,7 @@ const P = {
   rocket: AUDIENCE_PATHS.startup,
   cpu: <path d="M7 7h10v10H7V7Zm3 3h4v4h-4v-4ZM9 3v4m6-4v4M9 17v4m6-4v4M3 9h4m-4 6h4m10-6h4m-4 6h4" />,
   compass: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm3.5-12.5-2 5-5 2 2-5 5-2Z" />,
+  vr: <path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4l-1.5-2.5h-3L9 17H5a2 2 0 0 1-2-2V9Zm5 3h.01M16 12h.01" />,
   users: <path d="M16 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm13 9v-1a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" />,
 };
 
@@ -63,7 +64,7 @@ const P = {
 const SERVICE_ICONS: Record<AudienceId, ReactNode[]> = {
   local: [P.pin, P.browser, P.chat, P.calendar, P.repeat, P.qr, P.mail, P.megaphone],
   industry: [P.gauge, P.barcode, P.eye, P.chart, P.clipboard, P.spark],
-  enterprise: [P.spark, P.flow, P.code, P.chart, P.shield, P.cloud],
+  enterprise: [P.spark, P.flow, P.code, P.chart, P.shield, P.cloud, P.vr],
   startup: [P.rocket, P.spark, P.layers, P.cpu, P.compass, P.users],
 };
 

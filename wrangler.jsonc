@@ -1,0 +1,10 @@
+{
+  // Cloudflare Worker that serves the static build (dist/) at vectorial-soft.com.
+  // Deploy with: npm run deploy
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vectorial-soft",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}

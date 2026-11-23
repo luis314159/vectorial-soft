@@ -6,6 +6,7 @@ import { WHATSAPP_DISPLAY, whatsappLink } from "../lib/contact";
 const EMAILS = [
   { name: "Luis Almazán", address: "lalmazan@lalmazan.com" },
   { name: "Marco Sáenz", address: "marcosaenz31@hotmail.com" },
+  { name: "Adela Almazán", address: "lopezadela606@gmail.com" },
 ];
 
 export function Contact() {
@@ -17,7 +18,7 @@ export function Contact() {
       <div className="relative overflow-hidden">
         <div className="hero-glow pointer-events-none absolute inset-0 rotate-180" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-          <div className="reveal mx-auto max-w-2xl text-center">
+          <div className="reveal mx-auto max-w-3xl text-center">
             <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-accent">
               {t.contact.kicker}
             </span>
@@ -32,14 +33,14 @@ export function Contact() {
               href={whatsappLink(t.contact.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shine mt-10 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25d366] px-7 py-3.5 text-sm font-semibold text-[#06281a] transition hover:brightness-105"
+              className="btn-shine mt-10 inline-flex w-full items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[#25d366] px-7 py-3.5 sm:w-auto text-sm font-semibold text-[#06281a] transition hover:brightness-105"
             >
               <WhatsAppIcon className="h-5 w-5" />
               {t.contact.whatsappLabel}
-              <span className="font-mono text-xs opacity-80">{WHATSAPP_DISPLAY}</span>
+              <span className="hidden font-mono text-xs opacity-80 sm:inline">{WHATSAPP_DISPLAY}</span>
             </a>
 
-            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               {EMAILS.map((e) => (
                 <a
                   key={e.address}
@@ -57,7 +58,7 @@ export function Contact() {
               ))}
             </div>
 
-            <p className="mt-10 flex items-center justify-center gap-2 text-sm text-body">
+            <p className="mt-10 flex items-start justify-center gap-2 text-sm text-body sm:items-center">
               <svg viewBox="0 0 24 24" className="h-4 w-4 text-accent-2" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                 <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
                 <circle cx="12" cy="10" r="2.5" />

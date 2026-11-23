@@ -86,7 +86,7 @@ function PersonCard({ person, delay }: { person: Person; delay: number }) {
                 href={l.href}
                 target={l.icon === "mail" ? undefined : "_blank"}
                 rel={l.icon === "mail" ? undefined : "noopener noreferrer"}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs font-medium text-body transition hover:border-accent/50 hover:text-bright"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2.5 text-xs sm:px-3.5 sm:py-1.5 font-medium text-body transition hover:border-accent/50 hover:text-bright"
               >
                 <LinkIcon icon={l.icon} />
                 {l.label}

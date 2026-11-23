@@ -25,7 +25,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-36 sm:px-8 sm:pt-44">
         <div className="max-w-3xl">
           <span
-            className="enter inline-flex items-center gap-2 rounded-full border border-line bg-tint px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-body backdrop-blur-sm"
+            className="enter inline-flex items-center gap-2 rounded-full border border-line bg-tint px-3.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-body backdrop-blur-sm sm:px-4 sm:text-xs sm:tracking-[0.18em]"
             style={delay(0)}
           >
             <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent-2" aria-hidden="true" />
@@ -39,14 +39,14 @@ export function Hero() {
             {t.hero.titleA} <span className="text-gradient">{t.hero.titleAccent}</span> {t.hero.titleB}
           </h1>
 
-          <p className="enter mt-7 max-w-2xl text-lg leading-relaxed text-body" style={delay(320)}>
+          <p className="enter mt-6 max-w-2xl text-base leading-relaxed text-body sm:mt-7 sm:text-lg" style={delay(320)}>
             {t.hero.subtitle}
           </p>
 
-          <div className="enter mt-10 flex flex-wrap items-center gap-4" style={delay(440)}>
+          <div className="enter mt-9 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4" style={delay(440)}>
             <a
               href="#contact"
-              className="btn-shine group inline-flex items-center gap-2 rounded-full bg-bright px-7 py-3.5 text-sm font-semibold text-ink transition hover:opacity-90"
+              className="btn-shine group inline-flex w-full items-center justify-center gap-2 rounded-full bg-bright px-7 py-3.5 sm:w-auto text-sm font-semibold text-ink transition hover:opacity-90"
             >
               {t.hero.ctaPrimary}
               <svg
@@ -62,7 +62,7 @@ export function Hero() {
             </a>
             <a
               href="#work"
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-ink/40 px-7 py-3.5 text-sm font-semibold text-bright backdrop-blur-sm transition hover:border-accent/60 hover:bg-tint"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line bg-ink/40 px-7 py-3.5 sm:w-auto text-sm font-semibold text-bright backdrop-blur-sm transition hover:border-accent/60 hover:bg-tint"
             >
               {t.hero.ctaSecondary}
             </a>

@@ -73,7 +73,7 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="flex items-center gap-2.5" aria-label="Vectorial Soft — home">
           <Logo className="h-8 w-8" />
-          <Wordmark />
+          <span className="max-[359px]:hidden"><Wordmark /></span>
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -94,7 +94,7 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
           <LanguageSwitcher />
           <a

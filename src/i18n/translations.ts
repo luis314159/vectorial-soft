@@ -163,7 +163,7 @@ const en: Translation = {
       "ML engineer focused on MLOps and cloud infrastructure on AWS — taking models from experimentation to production at scale. Computer Science and Physics engineer (UACH), builder of autonomous-retail vision systems and end-to-end MLOps platforms.",
     adelaRole: "Co-Founder · Full-Stack & UX Engineer",
     adelaBio:
-      "Full-stack developer specialized in Human-Computer Interaction (M.Sc., UACH). Has built administrative and financial platforms with React, Angular and PHP/Laravel over PostgreSQL and SQL Server, and brings UX research, usability testing and interface design (Figma) to every product. Published author and conference speaker on virtual assistants for the emotional support of children with autism.",
+      "Full-stack developer specialized in Human-Computer Interaction (M.Sc., UACH). Has built administrative and financial platforms with React, Angular and PHP/Laravel over PostgreSQL and SQL Server, and brings UX research, usability testing and interface design (Figma) to every product. Published author and conference speaker on virtual assistants and virtual environments for the emotional support of children with autism, and a mentor in virtual reality development with Unity.",
     website: "Website",
     email: "Email",
   },
@@ -265,7 +265,7 @@ const es: Translation = {
       "Ingeniero de ML enfocado en MLOps e infraestructura cloud en AWS — llevando modelos de la experimentación a producción a escala. Ingeniero en Ciencias de la Computación y en Física (UACH), creador de sistemas de visión para retail autónomo y plataformas MLOps de extremo a extremo.",
     adelaRole: "Co-Fundadora · Ingeniera Full-Stack & UX",
     adelaBio:
-      "Desarrolladora full-stack especializada en Interacción Humano-Computadora (Maestría, UACH). Ha construido plataformas administrativas y financieras con React, Angular y PHP/Laravel sobre PostgreSQL y SQL Server, y aporta investigación UX, pruebas de usabilidad y diseño de interfaces (Figma) a cada producto. Autora de publicaciones y ponente en congresos sobre asistentes virtuales para el apoyo emocional de niños con autismo.",
+      "Desarrolladora full-stack especializada en Interacción Humano-Computadora (Maestría, UACH). Ha construido plataformas administrativas y financieras con React, Angular y PHP/Laravel sobre PostgreSQL y SQL Server, y aporta investigación UX, pruebas de usabilidad y diseño de interfaces (Figma) a cada producto. Autora de publicaciones y ponente en congresos sobre asistentes y entornos virtuales para el apoyo emocional de niños con autismo, y mentora en desarrollo de realidad virtual con Unity.",
     website: "Sitio web",
     email: "Correo",
   },
@@ -367,7 +367,7 @@ const pt: Translation = {
       "Engenheiro de ML focado em MLOps e infraestrutura cloud na AWS — levando modelos da experimentação à produção em escala. Engenheiro em Ciência da Computação e em Física (UACH), criador de sistemas de visão para varejo autônomo e plataformas MLOps de ponta a ponta.",
     adelaRole: "Co-Fundadora · Engenheira Full-Stack & UX",
     adelaBio:
-      "Desenvolvedora full-stack especializada em Interação Humano-Computador (Mestrado, UACH). Construiu plataformas administrativas e financeiras com React, Angular e PHP/Laravel sobre PostgreSQL e SQL Server, e traz pesquisa de UX, testes de usabilidade e design de interfaces (Figma) para cada produto. Autora de publicações e palestrante em congressos sobre assistentes virtuais para o apoio emocional de crianças com autismo.",
+      "Desenvolvedora full-stack especializada em Interação Humano-Computador (Mestrado, UACH). Construiu plataformas administrativas e financeiras com React, Angular e PHP/Laravel sobre PostgreSQL e SQL Server, e traz pesquisa de UX, testes de usabilidade e design de interfaces (Figma) para cada produto. Autora de publicações e palestrante em congressos sobre assistentes e ambientes virtuais para o apoio emocional de crianças com autismo, e mentora em desenvolvimento de realidade virtual com Unity.",
     website: "Site",
     email: "E-mail",
   },
@@ -469,7 +469,7 @@ const de: Translation = {
       "ML-Ingenieur mit Fokus auf MLOps und Cloud-Infrastruktur auf AWS — von der Experimentierphase bis zur Produktion im großen Maßstab. Ingenieur für Informatik und Physik (UACH), Entwickler von Vision-Systemen für autonomen Einzelhandel und End-to-End-MLOps-Plattformen.",
     adelaRole: "Mitgründerin · Full-Stack- & UX-Ingenieurin",
     adelaBio:
-      "Full-Stack-Entwicklerin mit Spezialisierung auf Mensch-Computer-Interaktion (M.Sc., UACH). Hat Verwaltungs- und Finanzplattformen mit React, Angular und PHP/Laravel auf PostgreSQL und SQL Server gebaut und bringt UX-Research, Usability-Tests und Interface-Design (Figma) in jedes Produkt ein. Autorin und Konferenz-Speakerin zu virtuellen Assistenten für die emotionale Unterstützung autistischer Kinder.",
+      "Full-Stack-Entwicklerin mit Spezialisierung auf Mensch-Computer-Interaktion (M.Sc., UACH). Hat Verwaltungs- und Finanzplattformen mit React, Angular und PHP/Laravel auf PostgreSQL und SQL Server gebaut und bringt UX-Research, Usability-Tests und Interface-Design (Figma) in jedes Produkt ein. Autorin und Konferenz-Speakerin zu virtuellen Assistenten und virtuellen Umgebungen für die emotionale Unterstützung autistischer Kinder sowie Mentorin für Virtual-Reality-Entwicklung mit Unity.",
     website: "Website",
     email: "E-Mail",
   },

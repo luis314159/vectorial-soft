@@ -346,6 +346,15 @@ export const servicesEn: ServicesCopy = {
             "Costs and performance under control",
           ],
         },
+        {
+          goal: "Immersive",
+          title: "Virtual reality & immersive experiences",
+          points: [
+            "VR training and onboarding simulators",
+            "Virtual environments for healthcare and education",
+            "Built in Unity with user-centered design",
+          ],
+        },
       ],
       plans: [
         {
@@ -765,6 +774,15 @@ export const servicesEs: ServicesCopy = {
             "Migración y despliegue en AWS y Azure",
             "Docker, Kubernetes y observabilidad",
             "Costos y rendimiento bajo control",
+          ],
+        },
+        {
+          goal: "Inmersivo",
+          title: "Realidad virtual y experiencias inmersivas",
+          points: [
+            "Simuladores de capacitación y entrenamiento en VR",
+            "Entornos virtuales para salud y educación",
+            "Desarrollo en Unity con diseño centrado en el usuario",
           ],
         },
       ],
@@ -1188,6 +1206,15 @@ export const servicesPt: ServicesCopy = {
             "Custos e desempenho sob controle",
           ],
         },
+        {
+          goal: "Imersivo",
+          title: "Realidade virtual e experiências imersivas",
+          points: [
+            "Simuladores de treinamento em VR",
+            "Ambientes virtuais para saúde e educação",
+            "Desenvolvimento em Unity com design centrado no usuário",
+          ],
+        },
       ],
       plans: [
         {
@@ -1607,6 +1634,15 @@ export const servicesDe: ServicesCopy = {
             "Migration und Deployment auf AWS und Azure",
             "Docker, Kubernetes und Observability",
             "Kosten und Performance im Griff",
+          ],
+        },
+        {
+          goal: "Immersiv",
+          title: "Virtual Reality & immersive Erlebnisse",
+          points: [
+            "VR-Trainings- und Schulungssimulatoren",
+            "Virtuelle Umgebungen für Gesundheit und Bildung",
+            "Entwickelt in Unity mit nutzerzentriertem Design",
           ],
         },
       ],

@@ -194,13 +194,15 @@ export function Services() {
             </p>
             <div
               className={`mt-5 grid gap-4 sm:grid-cols-2 ${
-                audience.services.length > 6 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+                audience.services.length % 4 === 0 ? "lg:grid-cols-4" : "lg:grid-cols-3"
               }`}
             >
               {audience.services.map((svc, i) => (
                 <article
                   key={svc.title}
-                  className="enter spotlight group flex flex-col rounded-2xl border border-line bg-surface p-6 transition-[border-color,translate] duration-300 hover:-translate-y-1 hover:border-accent/40"
+                  className={`enter spotlight group flex flex-col rounded-2xl border border-line bg-surface p-6 transition-[border-color,translate] duration-300 hover:-translate-y-1 hover:border-accent/40 ${
+                    i === audience.services.length - 1 && audience.services.length % 3 === 1 ? "sm:col-span-2 lg:col-span-3" : ""
+                  }`}
                   style={delay(300 + i * 55)}
                 >
                   <div className="flex items-center justify-between gap-3">
@@ -210,7 +212,13 @@ export function Services() {
                     <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">{svc.goal}</span>
                   </div>
                   <h4 className="mt-5 font-display text-base font-semibold leading-snug text-bright">{svc.title}</h4>
-                  <ul className="mt-4 space-y-2">
+                  <ul
+                    className={`mt-4 space-y-2 ${
+                      i === audience.services.length - 1 && audience.services.length % 3 === 1
+                        ? "lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0"
+                        : ""
+                    }`}
+                  >
                     {svc.points.map((p) => (
                       <li key={p} className="flex items-start gap-2 text-sm leading-snug text-body">
                         <CheckIcon className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-2" />
@@ -293,7 +301,7 @@ export function Services() {
                 </a>
                 <a
                   href="#process"
-                  className="text-sm font-semibold text-body underline-offset-4 transition hover:text-bright hover:underline"
+                  className="py-2 text-sm font-semibold text-body underline-offset-4 transition hover:text-bright hover:underline"
                 >
                   {s.processLink} →
                 </a>

@@ -24,6 +24,7 @@ const STACK = [
   "Qdrant",
   "LLMs & MCP",
   "Figma",
+  "Unity · VR",
 ];
 
 /** Endless, pausable ribbon of the stack — duplicated once so the loop is seamless. */

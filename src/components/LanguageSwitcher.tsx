@@ -31,7 +31,7 @@ export function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Change language"
-        className="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-xs font-medium uppercase tracking-widest text-body transition hover:border-accent/50 hover:text-bright"
+        className="flex h-9 items-center gap-1.5 rounded-full border border-line px-3 text-xs font-medium uppercase tracking-widest text-body transition hover:border-accent/50 hover:text-bright"
       >
         <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
           <circle cx="12" cy="12" r="9" />
