@@ -1,3 +1,15 @@
+import {
+  servicesEn,
+  servicesEs,
+  servicesPt,
+  servicesDe,
+  processEn,
+  processEs,
+  processPt,
+  processDe,
+} from "./servicesCopy";
+import type { ServicesCopy, ProcessCopy } from "./servicesCopy";
+
 export type Lang = "en" | "es" | "pt" | "de";
 
 export const LANGS: { code: Lang; label: string }[] = [
@@ -15,6 +27,7 @@ export interface ProjectCopy {
 export interface Translation {
   nav: {
     services: string;
+    process: string;
     work: string;
     founders: string;
     contact: string;
@@ -29,13 +42,11 @@ export interface Translation {
     ctaPrimary: string;
     ctaSecondary: string;
     stats: { value: string; label: string }[];
+    audiencePrompt: string;
+    stackLabel: string;
   };
-  services: {
-    kicker: string;
-    title: string;
-    subtitle: string;
-    items: { title: string; description: string; points: string[] }[];
-  };
+  services: ServicesCopy;
+  process: ProcessCopy;
   work: {
     kicker: string;
     title: string;
@@ -60,6 +71,9 @@ export interface Translation {
     title: string;
     subtitle: string;
     emailLabel: string;
+    whatsappLabel: string;
+    whatsappMessage: string;
+    whatsappFloat: string;
     location: string;
     remote: string;
   };
@@ -72,6 +86,7 @@ export interface Translation {
 const en: Translation = {
   nav: {
     services: "Services",
+    process: "How we work",
     work: "Work",
     founders: "Founders",
     contact: "Contact",
@@ -83,7 +98,7 @@ const en: Translation = {
     titleAccent: "engineered",
     titleB: "to production.",
     subtitle:
-      "We design and ship production-grade AI systems, web platforms and data infrastructure for companies that need software to work in the real world — from the cloud to the factory floor.",
+      "From local businesses to manufacturing plants: we design and ship software, AI systems and digital solutions that work in the real world — built with the same engineering standard we use in production.",
     ctaPrimary: "Start a project",
     ctaSecondary: "See our work",
     stats: [
@@ -92,56 +107,11 @@ const en: Translation = {
       { value: "5", label: "Industries served" },
       { value: "4", label: "Languages we speak" },
     ],
+    audiencePrompt: "What kind of business do you have?",
+    stackLabel: "Technologies & platforms we work with",
   },
-  services: {
-    kicker: "What we do",
-    title: "Full-cycle engineering, four disciplines.",
-    subtitle:
-      "From the first architectural sketch to monitored systems in production — we own the whole lifecycle.",
-    items: [
-      {
-        title: "AI & Machine Learning",
-        description:
-          "LLM applications, computer vision and forecasting — built as products, not experiments.",
-        points: [
-          "RAG pipelines, agents & MCP integrations",
-          "Computer vision on the edge (YOLO, ONNX)",
-          "Demand forecasting & predictive models",
-        ],
-      },
-      {
-        title: "Full-Stack Development",
-        description:
-          "Web platforms, dashboards, APIs and mobile apps with clean architecture that scales.",
-        points: [
-          "React & React Native frontends",
-          "FastAPI, Django and Rust (Axum) backends",
-          "UX research, usability testing & product design (Figma)",
-          "Identity, SSO & enterprise integrations",
-        ],
-      },
-      {
-        title: "Data & Cloud Infrastructure",
-        description:
-          "Streaming pipelines and MLOps platforms that keep models and data flowing reliably.",
-        points: [
-          "CDC & streaming: Kafka, ClickHouse, Redis",
-          "MLOps on AWS & Azure: MLflow, auto-labeling",
-          "Docker, Kubernetes & observability",
-        ],
-      },
-      {
-        title: "Industrial & Manufacturing Software",
-        description:
-          "Software that talks to the plant floor — born from years inside real factories.",
-        points: [
-          "MES: production, quality & traceability",
-          "SPC analytics & real-time monitoring",
-          "Edge vision systems on production lines",
-        ],
-      },
-    ],
-  },
+  services: servicesEn,
+  process: processEn,
   work: {
     kicker: "Selected work",
     title: "Systems running in the real world.",
@@ -203,6 +173,9 @@ const en: Translation = {
     subtitle:
       "Tell us about your project or the problem you need solved. We usually reply within 24 hours.",
     emailLabel: "Write to us",
+    whatsappLabel: "Message us on WhatsApp",
+    whatsappMessage: "Hi Vectorial Soft! I would like to talk about a project.",
+    whatsappFloat: "Chat on WhatsApp",
     location: "Chihuahua, México",
     remote: "Working with clients worldwide",
   },
@@ -215,6 +188,7 @@ const en: Translation = {
 const es: Translation = {
   nav: {
     services: "Servicios",
+    process: "Cómo trabajamos",
     work: "Proyectos",
     founders: "Fundadores",
     contact: "Contacto",
@@ -226,7 +200,7 @@ const es: Translation = {
     titleAccent: "diseñado",
     titleB: "para producción.",
     subtitle:
-      "Diseñamos y entregamos sistemas de AI, plataformas web e infraestructura de datos de nivel productivo, para empresas que necesitan que el software funcione en el mundo real — de la nube al piso de planta.",
+      "De negocios locales a plantas de manufactura: diseñamos y entregamos software, sistemas de AI y soluciones digitales que funcionan en el mundo real — con el mismo estándar de ingeniería que usamos en producción.",
     ctaPrimary: "Iniciar un proyecto",
     ctaSecondary: "Ver proyectos",
     stats: [
@@ -235,56 +209,11 @@ const es: Translation = {
       { value: "5", label: "Industrias atendidas" },
       { value: "4", label: "Idiomas que hablamos" },
     ],
+    audiencePrompt: "¿Qué tipo de negocio tienes?",
+    stackLabel: "Tecnologías y plataformas con las que trabajamos",
   },
-  services: {
-    kicker: "Qué hacemos",
-    title: "Ingeniería de ciclo completo, cuatro disciplinas.",
-    subtitle:
-      "Desde el primer diseño de arquitectura hasta sistemas monitoreados en producción — nos hacemos cargo de todo el ciclo de vida.",
-    items: [
-      {
-        title: "AI & Machine Learning",
-        description:
-          "Aplicaciones con LLMs, visión por computadora y pronósticos — construidos como productos, no como experimentos.",
-        points: [
-          "Pipelines RAG, agentes e integraciones MCP",
-          "Visión por computadora en el edge (YOLO, ONNX)",
-          "Pronóstico de demanda y modelos predictivos",
-        ],
-      },
-      {
-        title: "Desarrollo Full-Stack",
-        description:
-          "Plataformas web, dashboards, APIs y apps móviles con arquitectura limpia que escala.",
-        points: [
-          "Frontends en React y React Native",
-          "Backends en FastAPI, Django y Rust (Axum)",
-          "Investigación UX, pruebas de usabilidad y diseño de producto (Figma)",
-          "Identidad, SSO e integraciones empresariales",
-        ],
-      },
-      {
-        title: "Datos e Infraestructura Cloud",
-        description:
-          "Pipelines de streaming y plataformas MLOps que mantienen modelos y datos fluyendo con confiabilidad.",
-        points: [
-          "CDC y streaming: Kafka, ClickHouse, Redis",
-          "MLOps en AWS y Azure: MLflow, auto-etiquetado",
-          "Docker, Kubernetes y observabilidad",
-        ],
-      },
-      {
-        title: "Software Industrial y de Manufactura",
-        description:
-          "Software que habla con el piso de planta — nacido de años dentro de fábricas reales.",
-        points: [
-          "MES: producción, calidad y trazabilidad",
-          "Analítica SPC y monitoreo en tiempo real",
-          "Sistemas de visión en líneas de producción",
-        ],
-      },
-    ],
-  },
+  services: servicesEs,
+  process: processEs,
   work: {
     kicker: "Proyectos seleccionados",
     title: "Sistemas funcionando en el mundo real.",
@@ -346,6 +275,9 @@ const es: Translation = {
     subtitle:
       "Cuéntanos de tu proyecto o del problema que necesitas resolver. Normalmente respondemos en menos de 24 horas.",
     emailLabel: "Escríbenos",
+    whatsappLabel: "Escríbenos por WhatsApp",
+    whatsappMessage: "¡Hola, Vectorial Soft! Me gustaría platicar sobre un proyecto.",
+    whatsappFloat: "Escríbenos por WhatsApp",
     location: "Chihuahua, México",
     remote: "Trabajamos con clientes en todo el mundo",
   },
@@ -358,6 +290,7 @@ const es: Translation = {
 const pt: Translation = {
   nav: {
     services: "Serviços",
+    process: "Como trabalhamos",
     work: "Projetos",
     founders: "Fundadores",
     contact: "Contato",
@@ -369,7 +302,7 @@ const pt: Translation = {
     titleAccent: "projetado",
     titleB: "para produção.",
     subtitle:
-      "Projetamos e entregamos sistemas de AI, plataformas web e infraestrutura de dados de nível produtivo, para empresas que precisam que o software funcione no mundo real — da nuvem ao chão de fábrica.",
+      "De negócios locais a fábricas: projetamos e entregamos software, sistemas de AI e soluções digitais que funcionam no mundo real — com o mesmo padrão de engenharia que usamos em produção.",
     ctaPrimary: "Iniciar um projeto",
     ctaSecondary: "Ver projetos",
     stats: [
@@ -378,56 +311,11 @@ const pt: Translation = {
       { value: "5", label: "Indústrias atendidas" },
       { value: "4", label: "Idiomas que falamos" },
     ],
+    audiencePrompt: "Qual é o seu tipo de negócio?",
+    stackLabel: "Tecnologias e plataformas com que trabalhamos",
   },
-  services: {
-    kicker: "O que fazemos",
-    title: "Engenharia de ciclo completo, quatro disciplinas.",
-    subtitle:
-      "Do primeiro desenho de arquitetura a sistemas monitorados em produção — cuidamos de todo o ciclo de vida.",
-    items: [
-      {
-        title: "AI & Machine Learning",
-        description:
-          "Aplicações com LLMs, visão computacional e previsão — construídas como produtos, não como experimentos.",
-        points: [
-          "Pipelines RAG, agentes e integrações MCP",
-          "Visão computacional no edge (YOLO, ONNX)",
-          "Previsão de demanda e modelos preditivos",
-        ],
-      },
-      {
-        title: "Desenvolvimento Full-Stack",
-        description:
-          "Plataformas web, dashboards, APIs e apps mobile com arquitetura limpa que escala.",
-        points: [
-          "Frontends em React e React Native",
-          "Backends em FastAPI, Django e Rust (Axum)",
-          "Pesquisa de UX, testes de usabilidade e design de produto (Figma)",
-          "Identidade, SSO e integrações corporativas",
-        ],
-      },
-      {
-        title: "Dados e Infraestrutura Cloud",
-        description:
-          "Pipelines de streaming e plataformas MLOps que mantêm modelos e dados fluindo com confiabilidade.",
-        points: [
-          "CDC e streaming: Kafka, ClickHouse, Redis",
-          "MLOps na AWS e Azure: MLflow, auto-rotulagem",
-          "Docker, Kubernetes e observabilidade",
-        ],
-      },
-      {
-        title: "Software Industrial e de Manufatura",
-        description:
-          "Software que conversa com o chão de fábrica — nascido de anos dentro de fábricas reais.",
-        points: [
-          "MES: produção, qualidade e rastreabilidade",
-          "Análise SPC e monitoramento em tempo real",
-          "Sistemas de visão em linhas de produção",
-        ],
-      },
-    ],
-  },
+  services: servicesPt,
+  process: processPt,
   work: {
     kicker: "Projetos selecionados",
     title: "Sistemas funcionando no mundo real.",
@@ -489,6 +377,9 @@ const pt: Translation = {
     subtitle:
       "Conte-nos sobre o seu projeto ou o problema que você precisa resolver. Normalmente respondemos em menos de 24 horas.",
     emailLabel: "Escreva para nós",
+    whatsappLabel: "Fale conosco no WhatsApp",
+    whatsappMessage: "Olá, Vectorial Soft! Gostaria de conversar sobre um projeto.",
+    whatsappFloat: "Fale no WhatsApp",
     location: "Chihuahua, México",
     remote: "Trabalhamos com clientes no mundo todo",
   },
@@ -501,6 +392,7 @@ const pt: Translation = {
 const de: Translation = {
   nav: {
     services: "Leistungen",
+    process: "So arbeiten wir",
     work: "Projekte",
     founders: "Gründer",
     contact: "Kontakt",
@@ -512,7 +404,7 @@ const de: Translation = {
     titleAccent: "entwickelt",
     titleB: "für die Produktion.",
     subtitle:
-      "Wir entwerfen und liefern produktionsreife AI-Systeme, Web-Plattformen und Dateninfrastruktur für Unternehmen, deren Software in der realen Welt funktionieren muss — von der Cloud bis zum Fabrikboden.",
+      "Vom lokalen Geschäft bis zum Produktionswerk: Wir entwerfen und liefern Software, KI-Systeme und digitale Lösungen, die in der realen Welt funktionieren — mit demselben Engineering-Standard, den wir in der Produktion einsetzen.",
     ctaPrimary: "Projekt starten",
     ctaSecondary: "Unsere Projekte",
     stats: [
@@ -521,56 +413,11 @@ const de: Translation = {
       { value: "5", label: "Bediente Branchen" },
       { value: "4", label: "Sprachen, die wir sprechen" },
     ],
+    audiencePrompt: "Welche Art von Unternehmen haben Sie?",
+    stackLabel: "Technologien & Plattformen, mit denen wir arbeiten",
   },
-  services: {
-    kicker: "Was wir tun",
-    title: "Full-Cycle-Engineering, vier Disziplinen.",
-    subtitle:
-      "Vom ersten Architekturentwurf bis zu überwachten Systemen in Produktion — wir verantworten den gesamten Lebenszyklus.",
-    items: [
-      {
-        title: "AI & Machine Learning",
-        description:
-          "LLM-Anwendungen, Computer Vision und Prognosen — gebaut als Produkte, nicht als Experimente.",
-        points: [
-          "RAG-Pipelines, Agenten & MCP-Integrationen",
-          "Computer Vision am Edge (YOLO, ONNX)",
-          "Bedarfsprognosen & prädiktive Modelle",
-        ],
-      },
-      {
-        title: "Full-Stack-Entwicklung",
-        description:
-          "Web-Plattformen, Dashboards, APIs und Mobile-Apps mit sauberer, skalierbarer Architektur.",
-        points: [
-          "Frontends mit React & React Native",
-          "Backends mit FastAPI, Django und Rust (Axum)",
-          "UX-Research, Usability-Tests & Produktdesign (Figma)",
-          "Identity, SSO & Enterprise-Integrationen",
-        ],
-      },
-      {
-        title: "Daten & Cloud-Infrastruktur",
-        description:
-          "Streaming-Pipelines und MLOps-Plattformen, die Modelle und Daten zuverlässig am Laufen halten.",
-        points: [
-          "CDC & Streaming: Kafka, ClickHouse, Redis",
-          "MLOps auf AWS & Azure: MLflow, Auto-Labeling",
-          "Docker, Kubernetes & Observability",
-        ],
-      },
-      {
-        title: "Industrie- & Fertigungssoftware",
-        description:
-          "Software, die mit dem Shopfloor spricht — entstanden aus Jahren in echten Fabriken.",
-        points: [
-          "MES: Produktion, Qualität & Rückverfolgbarkeit",
-          "SPC-Analytik & Echtzeit-Monitoring",
-          "Edge-Vision-Systeme an Produktionslinien",
-        ],
-      },
-    ],
-  },
+  services: servicesDe,
+  process: processDe,
   work: {
     kicker: "Ausgewählte Projekte",
     title: "Systeme, die in der realen Welt laufen.",
@@ -632,6 +479,9 @@ const de: Translation = {
     subtitle:
       "Erzählen Sie uns von Ihrem Projekt oder dem Problem, das Sie lösen möchten. Wir antworten in der Regel innerhalb von 24 Stunden.",
     emailLabel: "Schreiben Sie uns",
+    whatsappLabel: "Per WhatsApp schreiben",
+    whatsappMessage: "Hallo Vectorial Soft! Ich möchte über ein Projekt sprechen.",
+    whatsappFloat: "Per WhatsApp schreiben",
     location: "Chihuahua, Mexiko",
     remote: "Wir arbeiten mit Kunden weltweit",
   },

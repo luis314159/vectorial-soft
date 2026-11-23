@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
 import { SectionHeader } from "./SectionHeader";
@@ -54,17 +55,19 @@ function LinkIcon({ icon }: { icon: PersonLink["icon"] }) {
 function PersonCard({ person, delay }: { person: Person; delay: number }) {
   return (
     <article
-      className="reveal overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:border-accent/40"
+      className="reveal group overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:border-accent/40"
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="grid sm:grid-cols-[200px_1fr]">
-        <div className="relative aspect-square sm:aspect-auto sm:h-full">
-          <img
-            src={person.photo}
-            alt={person.name}
-            loading="lazy"
-            className={`absolute inset-0 h-full w-full object-cover ${person.photoPosition}`}
-          />
+        <div className="scan relative aspect-square sm:aspect-auto sm:h-full" style={{ "--d": `${delay + 250}ms` } as CSSProperties}>
+          <div className="scan-body absolute inset-0 overflow-hidden">
+            <img
+              src={person.photo}
+              alt={person.name}
+              loading="lazy"
+              className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${person.photoPosition}`}
+            />
+          </div>
           <div
             className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent sm:bg-gradient-to-r"
             aria-hidden="true"

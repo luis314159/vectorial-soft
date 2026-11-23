@@ -1,5 +1,7 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
+import { WhatsAppIcon } from "./icons";
+import { WHATSAPP_DISPLAY, whatsappLink } from "../lib/contact";
 
 const EMAILS = [
   { name: "Luis Almazán", address: "lalmazan@lalmazan.com" },
@@ -26,7 +28,18 @@ export function Contact() {
               {t.contact.subtitle}
             </p>
 
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={whatsappLink(t.contact.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shine mt-10 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25d366] px-7 py-3.5 text-sm font-semibold text-[#06281a] transition hover:brightness-105"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              {t.contact.whatsappLabel}
+              <span className="font-mono text-xs opacity-80">{WHATSAPP_DISPLAY}</span>
+            </a>
+
+            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
               {EMAILS.map((e) => (
                 <a
                   key={e.address}

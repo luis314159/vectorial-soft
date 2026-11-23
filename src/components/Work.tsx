@@ -1,5 +1,6 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
+import { useSpotlight } from "../hooks/useMotion";
 import { SectionHeader } from "./SectionHeader";
 
 const PROJECT_TAGS: string[][] = [
@@ -14,6 +15,7 @@ const PROJECT_TAGS: string[][] = [
 export function Work() {
   const { t, lang } = useLanguage();
   const ref = useReveal<HTMLElement>([lang]);
+  useSpotlight(ref);
 
   return (
     <section id="work" ref={ref} className="scroll-mt-20 border-y border-line bg-surface/40">
@@ -24,7 +26,7 @@ export function Work() {
           {t.work.projects.map((project, i) => (
             <article
               key={project.title}
-              className="reveal group flex flex-col rounded-2xl border border-line bg-ink p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40"
+              className="reveal spotlight group flex flex-col rounded-2xl border border-line bg-ink p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40"
               style={{ transitionDelay: `${(i % 3) * 60}ms` }}
             >
               <span className="font-mono text-xs text-accent/70">

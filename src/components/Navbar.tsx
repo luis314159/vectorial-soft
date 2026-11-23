@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Logo, Wordmark } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -8,16 +8,55 @@ export function Navbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [current, setCurrent] = useState("");
+  const progressRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      setScrolled(window.scrollY > 12);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? window.scrollY / max : 0;
+      if (progressRef.current) progressRef.current.style.transform = `scaleX(${p})`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  // Highlight the link of the section in the middle of the viewport.
+  useEffect(() => {
+    const ids = ["services", "process", "work", "founders", "contact"];
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) setCurrent(`#${e.target.id}`);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+    const onTop = () => window.scrollY < 200 && setCurrent("");
+    window.addEventListener("scroll", onTop, { passive: true });
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", onTop);
+    };
   }, []);
 
   const links = [
     { href: "#services", label: t.nav.services },
+    { href: "#process", label: t.nav.process },
     { href: "#work", label: t.nav.work },
     { href: "#founders", label: t.nav.founders },
     { href: "#contact", label: t.nav.contact },
@@ -37,16 +76,22 @@ export function Navbar() {
           <Wordmark />
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-body transition hover:text-bright"
-            >
-              {l.label}
-            </a>
-          ))}
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((l) => {
+            const isCurrent = current === l.href;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                aria-current={isCurrent ? "true" : undefined}
+                className={`nav-link relative py-1 text-sm font-medium transition hover:text-bright ${
+                  isCurrent ? "is-current text-bright" : "text-body"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-3">
@@ -54,13 +99,13 @@ export function Navbar() {
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="hidden rounded-full bg-bright px-4 py-2 text-sm font-semibold text-ink transition hover:opacity-85 md:block"
+            className="btn-shine hidden rounded-full bg-bright px-4 py-2 text-sm font-semibold text-ink transition hover:opacity-85 lg:block"
           >
             {t.nav.cta}
           </a>
           <button
             type="button"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-body md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-body lg:hidden"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -72,15 +117,23 @@ export function Navbar() {
         </div>
       </nav>
 
+      <span
+        ref={progressRef}
+        className="scroll-progress pointer-events-none absolute inset-x-0 bottom-0 h-[2px] origin-left"
+        style={{ transform: "scaleX(0)" }}
+        aria-hidden="true"
+      />
+
       {menuOpen && (
-        <div className="border-t border-line bg-ink/95 px-5 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-line bg-ink/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-1">
-            {links.map((l) => (
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-body transition hover:bg-tint hover:text-bright"
+                style={{ animationDelay: `${i * 45}ms` }}
+                className="menu-item rounded-lg px-3 py-2.5 text-sm font-medium text-body transition hover:bg-tint hover:text-bright"
               >
                 {l.label}
               </a>
