@@ -65,6 +65,9 @@ export interface Translation {
     adelaBio: string;
     website: string;
     email: string;
+    adelaAward: string;
+    adelaAwardDetail: string;
+    awardLink: string;
   };
   contact: {
     kicker: string;
@@ -166,6 +169,9 @@ const en: Translation = {
       "Full-stack developer specialized in Human-Computer Interaction (M.Sc., UACH). Has built administrative and financial platforms with React, Angular and PHP/Laravel over PostgreSQL and SQL Server, and brings UX research, usability testing and interface design (Figma) to every product. Published author and conference speaker on virtual assistants and virtual environments for the emotional support of children with autism, and a mentor in virtual reality development with Unity.",
     website: "Website",
     email: "Email",
+    adelaAward: "1st place · National Thesis Contest ANIEI 2026",
+    adelaAwardDetail: "For a virtual-reality assistance pet that helps children with autism recognize emotions.",
+    awardLink: "Read the news",
   },
   contact: {
     kicker: "Contact",
@@ -268,6 +274,9 @@ const es: Translation = {
       "Desarrolladora full-stack especializada en Interacción Humano-Computadora (Maestría, UACH). Ha construido plataformas administrativas y financieras con React, Angular y PHP/Laravel sobre PostgreSQL y SQL Server, y aporta investigación UX, pruebas de usabilidad y diseño de interfaces (Figma) a cada producto. Autora de publicaciones y ponente en congresos sobre asistentes y entornos virtuales para el apoyo emocional de niños con autismo, y mentora en desarrollo de realidad virtual con Unity.",
     website: "Sitio web",
     email: "Correo",
+    adelaAward: "1er lugar · Certamen Nacional de Tesis ANIEI 2026",
+    adelaAwardDetail: "Por una mascota de asistencia en realidad virtual que ayuda a niñas y niños con autismo a reconocer emociones.",
+    awardLink: "Ver la noticia",
   },
   contact: {
     kicker: "Contacto",
@@ -370,6 +379,9 @@ const pt: Translation = {
       "Desenvolvedora full-stack especializada em Interação Humano-Computador (Mestrado, UACH). Construiu plataformas administrativas e financeiras com React, Angular e PHP/Laravel sobre PostgreSQL e SQL Server, e traz pesquisa de UX, testes de usabilidade e design de interfaces (Figma) para cada produto. Autora de publicações e palestrante em congressos sobre assistentes e ambientes virtuais para o apoio emocional de crianças com autismo, e mentora em desenvolvimento de realidade virtual com Unity.",
     website: "Site",
     email: "E-mail",
+    adelaAward: "1º lugar · Concurso Nacional de Teses ANIEI 2026",
+    adelaAwardDetail: "Por um pet de assistência em realidade virtual que ajuda crianças com autismo a reconhecer emoções.",
+    awardLink: "Ver a notícia",
   },
   contact: {
     kicker: "Contato",
@@ -472,6 +484,9 @@ const de: Translation = {
       "Full-Stack-Entwicklerin mit Spezialisierung auf Mensch-Computer-Interaktion (M.Sc., UACH). Hat Verwaltungs- und Finanzplattformen mit React, Angular und PHP/Laravel auf PostgreSQL und SQL Server gebaut und bringt UX-Research, Usability-Tests und Interface-Design (Figma) in jedes Produkt ein. Autorin und Konferenz-Speakerin zu virtuellen Assistenten und virtuellen Umgebungen für die emotionale Unterstützung autistischer Kinder sowie Mentorin für Virtual-Reality-Entwicklung mit Unity.",
     website: "Website",
     email: "E-Mail",
+    adelaAward: "1. Platz · Nationaler Thesis-Wettbewerb ANIEI 2026",
+    adelaAwardDetail: "Für ein Virtual-Reality-Assistenztier, das Kindern mit Autismus hilft, Emotionen zu erkennen.",
+    awardLink: "Zum Artikel",
   },
   contact: {
     kicker: "Kontakt",

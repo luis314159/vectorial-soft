@@ -19,6 +19,7 @@ interface Person {
   photo: string;
   photoPosition: string;
   links: PersonLink[];
+  award?: { title: string; detail: string; href: string; linkLabel: string };
 }
 
 function LinkIcon({ icon }: { icon: PersonLink["icon"] }) {
@@ -78,6 +79,26 @@ function PersonCard({ person, delay }: { person: Person; delay: number }) {
           <p className="mt-1.5 font-mono text-xs uppercase tracking-wider text-accent">
             {person.role}
           </p>
+          {person.award && (
+            <a
+              href={person.award.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-4 flex items-start gap-3 rounded-xl border border-accent-2/30 bg-accent-2/10 p-3.5 transition hover:border-accent-2/60"
+            >
+              <svg viewBox="0 0 24 24" className="mt-0.5 h-5 w-5 shrink-0 text-accent-2" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 0 1-10 0V4Zm0 2H4a3 3 0 0 0 3 4m10-4h3a3 3 0 0 1-3 4" />
+              </svg>
+              <span className="min-w-0">
+                <span className="block text-sm font-semibold text-bright">{person.award.title}</span>
+                <span className="mt-0.5 block text-xs leading-relaxed text-body">{person.award.detail}</span>
+                <span className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-accent-2">
+                  {person.award.linkLabel}
+                  <svg viewBox="0 0 24 24" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </span>
+              </span>
+            </a>
+          )}
           <p className="mt-4 text-sm leading-relaxed text-body">{person.bio}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {person.links.map((l) => (
@@ -131,6 +152,12 @@ export function Founders() {
       name: "Adela Almazán",
       role: t.founders.adelaRole,
       bio: t.founders.adelaBio,
+      award: {
+        title: t.founders.adelaAward,
+        detail: t.founders.adelaAwardDetail,
+        href: "https://noticiasdelicias.mx/egresada-de-ingenieria-obtiene-primer-lugar-nacional-en-certamen-de-tesis-aniei-2026-con-proyecto-de-realidad-virtual-para-ninos-con-autismo/",
+        linkLabel: t.founders.awardLink,
+      },
       photo: adelaPhoto,
       photoPosition: "object-center",
       links: [
