@@ -9,6 +9,8 @@ import {
   processDe,
 } from "./servicesCopy";
 import type { ServicesCopy, ProcessCopy } from "./servicesCopy";
+import { examplesEn, examplesEs, examplesPt, examplesDe } from "./examplesCopy";
+import type { ExamplesCopy } from "./examplesCopy";
 
 export type Lang = "en" | "es" | "pt" | "de";
 
@@ -47,6 +49,7 @@ export interface Translation {
   };
   services: ServicesCopy;
   process: ProcessCopy;
+  examples: ExamplesCopy;
   work: {
     kicker: string;
     title: string;
@@ -115,6 +118,7 @@ const en: Translation = {
   },
   services: servicesEn,
   process: processEn,
+  examples: examplesEn,
   work: {
     kicker: "Selected work",
     title: "Systems running in the real world.",
@@ -220,6 +224,7 @@ const es: Translation = {
   },
   services: servicesEs,
   process: processEs,
+  examples: examplesEs,
   work: {
     kicker: "Proyectos seleccionados",
     title: "Sistemas funcionando en el mundo real.",
@@ -325,6 +330,7 @@ const pt: Translation = {
   },
   services: servicesPt,
   process: processPt,
+  examples: examplesPt,
   work: {
     kicker: "Projetos selecionados",
     title: "Sistemas funcionando no mundo real.",
@@ -430,6 +436,7 @@ const de: Translation = {
   },
   services: servicesDe,
   process: processDe,
+  examples: examplesDe,
   work: {
     kicker: "Ausgewählte Projekte",
     title: "Systeme, die in der realen Welt laufen.",

@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
 import { TechMarquee } from "./components/TechMarquee";
 import { Process } from "./components/Process";
+import { Examples } from "./components/Examples";
 import { Work } from "./components/Work";
 import { Founders } from "./components/Founders";
 import { Contact } from "./components/Contact";
@@ -20,6 +21,7 @@ export default function App() {
         <Hero />
         <TechMarquee />
         <Services />
+        <Examples />
         <Process />
         <Work />
         <Founders />
