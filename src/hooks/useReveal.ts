@@ -31,7 +31,10 @@ export function useReveal<T extends HTMLElement>(deps: unknown[] = []) {
           }
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      // Fire once the element's top passes 88% of the viewport. A ratio threshold
+      // (e.g. 0.15) never fires for blocks taller than ~6 screens, which on phones
+      // left the whole services panel stuck at opacity 0.
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" },
     );
 
     targets.forEach((el) => observer.observe(el));
